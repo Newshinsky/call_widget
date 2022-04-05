@@ -13,6 +13,7 @@ $font-family: 'Manrope';
     justify-content: center;
     align-items: center;
 
+
     >input,
     select {
         margin: 1vw;
@@ -39,6 +40,17 @@ $font-family: 'Manrope';
         color: #99A3B3;
         font-weight: 500;
         padding: 22px 16px;
+    }
+
+    .error {
+        border: 2px solid rgb(228, 111, 111);
+        box-shadow: 13px 15px 25px 1px rgba(238, 74, 74, 0.32);
+        color: red;
+    }
+
+    .errorMessage {
+        color: red;
+        font-weight: 600;
     }
 }
 

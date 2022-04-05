@@ -43,10 +43,13 @@ $font-family: 'Manrope';
 }
 
 .secondConfirm__slider {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 700px;
+
+    .swiper-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
 }
 
 .secondConfirm__aim {
@@ -67,10 +70,19 @@ $font-family: 'Manrope';
     font-weight: 500;
     font-size: 14px;
     color: #566681;
-    padding: 2vw;
+    padding: 5vw;
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+
 
     >li a {
         text-decoration: none;
         color: #00a9ff;
+    }
+}
+
+@media (max-width: 700px) {
+    .secondConfirm__slider {
+        width: 350px;
     }
 }

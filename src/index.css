@@ -32,4 +32,5 @@ body {
   max-width: 1024px;
   border: 1px solid #ccc;
   min-height: 100%;
+  overflow: hidden;
 }

@@ -1,13 +1,16 @@
-import { ActionsType, defaultStateType, ListDataType, SetListActionType } from "../types"
+import { ActionsType, defaultStateType, ListDataType, ListType, SetIsBooleanActionType, SetListActionType } from "../types"
 
 const defaultState = {
-    listData:
-        [{
+    listData: {
+        list: [{
             code: null,
             nameEn: null,
             nameKz: "",
             nameRu: "",
         }],
+        status: ""
+    }
+    ,
     isLoading: false
 }
 
@@ -16,12 +19,17 @@ export default function listReducer(state: defaultStateType = defaultState, acti
         case "SET_LIST":
             return {
                 ...state,
-                listData: action.payload.list,
+                listData: action.payload,
                 isLoading: false
+            }
+        case "SET_IS_LOADING":
+            return {
+                ...state,
+                isLoading: true
             }
         default: return state
     }
 }
-
-export const setList = (list: ListDataType[]): SetListActionType => ({ type: "SET_LIST", payload: list })
+export const setList = (list: ListType): SetListActionType => ({ type: "SET_LIST", payload: list })
+export const setIsLoading = (isLoading: boolean): SetIsBooleanActionType => ({ type: "SET_IS_LOADING", payload: isLoading })
 

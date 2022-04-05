@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { FC } from 'react'
 import "./PurposeAppeal.scss"
 
 
-const PurposeAppeal = () => {
+type PropsType = {
+    purpose: string
+}
+
+const PurposeAppeal: FC<PropsType> = (props) => {
+    let { purpose } = props
+
     return (
         <div className="purpose__wrapper">
             <div className="purpose__title">
-                <h1> Верификатор </h1>
-                <p> Homebank </p>
+                <h1> {purpose} </h1>
+                <p> Контакт-центр </p>
             </div>
             <a href=""> Выбрать </a>
         </div>

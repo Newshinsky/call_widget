@@ -1,16 +1,19 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, FC, memo } from 'react';
 import InputMask from "react-input-mask";
 import CustomButton from '../../../components/CustomButton/CustomButton';
 import Header from '../../../components/Header/Header';
 import { UseFormField } from '../../../hooks/UseForm';
 import { ROUTES_NAMES } from '../../../routes/RoutesNames';
+import { ListDataType } from '../types';
 import PurposeAppeal from './PurposeAppeal/PurposeAppeal';
 import "./SecondConfirmPage.scss";
 
+type PropsType = {
+    listData: ListDataType[]
+}
 
-
-const SecondConfirmPage = () => {
-    console.log("render")
+const SecondConfirmPage: FC<PropsType> = memo((props) => {
+    let { listData } = props
     const handleRegister = (data: any, event: any) => {
         // event.preventDefault();
         // reset()
@@ -50,12 +53,10 @@ const SecondConfirmPage = () => {
             <div className="secondConfirm__aim">
                 <h2> Цель обращения </h2>
                 <div className="secondConfirm__slider">
-                    <PurposeAppeal />
-                    <PurposeAppeal />
-                    <PurposeAppeal />
-                    <PurposeAppeal />
-                    <PurposeAppeal />
-                    <PurposeAppeal />
+
+                    {listData.map((e: ListDataType) => {
+                        return <PurposeAppeal key={e.code} purpose={e.nameRu} />
+                    })}
                 </div>
             </div>
             <ul className="secondConfirm__list">   Нажимая кнопку «Далее», вы соглашаетесь:
@@ -71,6 +72,6 @@ const SecondConfirmPage = () => {
 
         </div>
     )
-}
+})
 
 export default SecondConfirmPage

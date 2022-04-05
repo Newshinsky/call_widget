@@ -7,6 +7,8 @@ import { HashRouter } from 'react-router-dom';
 
 import 'normalize.css';
 import "./index.css"
+import { Provider } from 'react-redux';
+import { store } from './store/rootReducer';
 
 
 i18n
@@ -27,7 +29,9 @@ const modalRoot = document.getElementById("root") as HTMLElement;
 const root = createRoot(modalRoot)
 root.render
     (
-        <HashRouter>
-            <App />
-        </HashRouter>
+        <Provider store={store}>
+            <HashRouter>
+                <App />
+            </HashRouter>
+        </Provider>
     )

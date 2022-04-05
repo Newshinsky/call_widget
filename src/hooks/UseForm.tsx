@@ -6,6 +6,6 @@ export const UseFormField = (initialValue: string = '') => {
         phone: '',
         inn: '',
     });
-    const handleChange = useCallback((prop: any, e: ChangeEvent<HTMLInputElement>) => setObj({ ...obj, ...{ [prop]: e.target.value } }), [obj]);
+    const handleChange = useCallback((prop: string, e: ChangeEvent<HTMLInputElement>) => setObj({ ...obj, ...{ [prop]: e.target.value } }), [obj]);
     return { obj, handleChange, setObj };
 };

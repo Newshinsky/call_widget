@@ -1,17 +1,33 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import i18n from 'i18next';
+import { createRoot } from 'react-dom/client';
+import { initReactI18next } from 'react-i18next';
+import App from './app';
+import { default as kz, default as ru } from './locales/ru.json';
+import { HashRouter } from 'react-router-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import 'normalize.css';
+import "./index.css"
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+i18n
+    .use(initReactI18next)
+    .init({
+        resources: {
+            ru,
+            kz,
+        },
+        lng: 'ru',
+        fallbackLng: 'ru',
+        interpolation: {
+            escapeValue: false,
+        },
+    });
+
+const modalRoot = document.getElementById("root") as HTMLElement;
+const root = createRoot(modalRoot)
+root.render
+    (
+        <HashRouter>
+            <App />
+        </HashRouter>
+    )

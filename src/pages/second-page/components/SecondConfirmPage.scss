@@ -1,0 +1,76 @@
+$font-family: 'Manrope';
+
+
+.secondConfirm__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.secondConfirm__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >input,
+    select {
+        margin: 1vw;
+        width: 343px;
+        height: 64px;
+        box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        border: none;
+        font-weight: 500;
+        font-size: 16px;
+        font-family: $font-family;
+        padding: 22px 16px;
+    }
+
+    >input::-webkit-input-placeholder {
+        font-family: $font-family;
+        color: #99A3B3;
+        font-weight: 500;
+        padding: 22px 16px;
+    }
+
+    >input:-moz-placeholder {
+        font-family: $font-family;
+        color: #99A3B3;
+        font-weight: 500;
+        padding: 22px 16px;
+    }
+}
+
+.secondConfirm__slider {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.secondConfirm__aim {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        font-weight: 700;
+        font-size: 14px;
+        text-align: left;
+
+    }
+}
+
+.secondConfirm__list {
+    font-weight: 500;
+    font-size: 14px;
+    color: #566681;
+    padding: 2vw;
+
+    >li a {
+        text-decoration: none;
+        color: #00a9ff;
+    }
+}

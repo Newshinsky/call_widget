@@ -1,0 +1,17 @@
+.wrapper {
+    width: 343px;
+    margin: 0 auto;
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        padding: 14px 16px;
+        background: linear-gradient(270deg, #00805F 0%, #2AA65C 100%);
+        color: #fff;
+        box-shadow: 0px 4px 12px 0px #2AA65C66;
+        border-radius: 12px;
+        text-align: center;
+    }
+}

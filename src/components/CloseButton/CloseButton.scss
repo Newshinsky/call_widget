@@ -1,0 +1,23 @@
+.CloseButton {
+    cursor: pointer;
+    position: absolute;
+    top: 1;
+    left: 10;
+}
+
+.CloseButton:before,
+.CloseButton:after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 4px;
+    background: rgb(0, 0, 0);
+}
+
+.CloseButton:before {
+    transform: rotate(45deg);
+}
+
+.CloseButton:after {
+    transform: rotate(-45deg);
+}

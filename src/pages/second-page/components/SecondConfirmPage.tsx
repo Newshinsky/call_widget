@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, memo } from 'react';
+import React, { ChangeEvent, Dispatch, FC, memo, SetStateAction } from 'react';
 import InputMask from "react-input-mask";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -7,9 +7,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import BackArrow from '../../../components/BackArrow/BackArrow';
 import CustomButton from '../../../components/CustomButton/CustomButton';
 import Header from '../../../components/Header/Header';
-import { UseFormField } from '../../../hooks/UseForm';
+import { objType } from '../../../hooks/UseForm';
 import { ROUTES_NAMES } from '../../../routes/RoutesNames';
-import ValidateIIN from '../../../utils/ValidateIIN';
 import ValidatePhone from '../../../utils/ValidatePhone';
 import { ListDataType } from '../types';
 import PurposeAppeal from './PurposeAppeal/PurposeAppeal';
@@ -18,19 +17,15 @@ import "./SecondConfirmPage.scss";
 
 type PropsType = {
     listData: ListDataType[]
+    IsError: boolean
+    obj: objType
+    handleChange: (prop: string, e: ChangeEvent<HTMLInputElement>) => void
+    handleSubmit: (e: React.FormEvent) => void
+    setObj: Dispatch<SetStateAction<objType>>
 }
 
 const SecondConfirmPage: FC<PropsType> = memo((props) => {
-    let { listData } = props
-
-    const { obj, handleChange, setObj } = UseFormField();
-
-    const error = !ValidateIIN(obj.inn)
-
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-    };
-
+    let { listData, IsError, obj, handleChange, handleSubmit, setObj } = props
 
     return (
         <div className="container">
@@ -57,9 +52,9 @@ const SecondConfirmPage: FC<PropsType> = memo((props) => {
                     maxLength={12}
                     onChange={event => handleChange('inn', event)}
                     value={obj.inn}
-                    className={obj.inn.length === 12 && error ? "error" : ""}
+                    className={obj.inn.length === 12 && IsError ? "error" : ""}
                 />
-                {obj.inn.length === 12 && error && <p className="errorMessage"> Неверный ИНН </p>}
+                {obj.inn.length === 12 && IsError && <p className="errorMessage"> Неверный ИНН </p>}
             </form>
 
             <div className="secondConfirm__aim">

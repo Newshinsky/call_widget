@@ -1,15 +1,12 @@
-import React, { FC, FormEvent } from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-import "./CustomButton.scss"
-
+import "./CustomButton.scss";
 
 interface CustomButtonProps {
     route: string;
     text: string
     onClickHandler?: () => void
 }
-
-
 
 const CustomButton: FC<CustomButtonProps> = (props) => {
     const { route, text, onClickHandler } = props;

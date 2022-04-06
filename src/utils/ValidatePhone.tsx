@@ -1,4 +1,3 @@
-import React from 'react'
 
 const ValidatePhone = (pnohe: string) => {
     const regEx = /[^\d]/g;

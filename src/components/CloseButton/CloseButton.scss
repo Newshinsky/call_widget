@@ -1,17 +1,18 @@
 .CloseButton {
     cursor: pointer;
-    position: absolute;
-    top: 1;
-    left: 10;
+  
+ 
+
 }
 
 .CloseButton:before,
 .CloseButton:after {
     content: "";
     position: absolute;
-    width: 24px;
-    height: 4px;
+    width: 18px;
+    height: 3px;
     background: rgb(0, 0, 0);
+    
 }
 
 .CloseButton:before {

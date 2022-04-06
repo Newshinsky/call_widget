@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
+import BackArrow from '../../../components/BackArrow/BackArrow';
 import CustomButton from '../../../components/CustomButton/CustomButton';
 import Header from '../../../components/Header/Header';
 import { UseFormField } from '../../../hooks/UseForm';
@@ -31,10 +32,10 @@ const SecondConfirmPage: FC<PropsType> = memo((props) => {
     };
 
 
-
     return (
         <div className="container">
             <div className="secondConfirm__header">
+                <BackArrow />
                 <Header text="Видеозвонок" />
             </div>
             <form className="secondConfirm__form" onSubmit={handleSubmit}>
@@ -48,7 +49,7 @@ const SecondConfirmPage: FC<PropsType> = memo((props) => {
                     mask="+7 (999) 999-99-99"
                     onChange={event => handleChange('phone', event)}
                     value={obj.phone}
-                    className = {ValidatePhone(obj.phone) < 11 ? "error" : "" }
+                    className={ValidatePhone(obj.phone) < 11 ? "error" : ""}
                 />
                 {ValidatePhone(obj.phone) < 11 && <p className="errorMessage"> Введите коррентный номер </p>}
                 <input
@@ -68,14 +69,8 @@ const SecondConfirmPage: FC<PropsType> = memo((props) => {
                     <Swiper
                         slidesPerView={2}
                         spaceBetween={0}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        breakpoints={{
-                            700: {
-                                slidesPerView: 4,
-                            }
-                        }}
+                        pagination={{ clickable: true, }}
+                        breakpoints={{ 700: { slidesPerView: 4, } }}
                         className="mySwiper"
                     >
                         {listData.map((e: ListDataType) => {
@@ -84,6 +79,7 @@ const SecondConfirmPage: FC<PropsType> = memo((props) => {
                             </SwiperSlide>
                         })}
                     </Swiper>
+
                 </div>
             </div>
 

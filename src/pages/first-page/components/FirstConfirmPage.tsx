@@ -1,5 +1,6 @@
 
 import React from 'react'
+import CloseButton from '../../../components/CloseButton/CloseButton'
 import CustomButton from '../../../components/CustomButton/CustomButton'
 import Header from '../../../components/Header/Header'
 import { ROUTES_NAMES } from '../../../routes/RoutesNames'
@@ -11,9 +12,11 @@ const FirstConfirmPage = () => {
 
     return (
         <div className="container">
+
             <div className="firstConfirm__header">
-                {/* <CloseButton /> */}
+                <CloseButton />
                 <Header text="Видеозвонок" />
+
             </div>
             <div className="firstConfirm__text">
                 <img src={Videocall} alt="" />

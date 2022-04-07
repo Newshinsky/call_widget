@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/call_widget/static/css/main.e98fc924.css",
-    "main.js": "/call_widget/static/js/main.b0e02aca.js",
+    "main.js": "/call_widget/static/js/main.5f85ff6b.js",
     "static/media/videoCall.png": "/call_widget/static/media/videoCall.826e8451360dffd7c960.png",
     "index.html": "/call_widget/index.html",
     "main.e98fc924.css.map": "/call_widget/static/css/main.e98fc924.css.map",
-    "main.b0e02aca.js.map": "/call_widget/static/js/main.b0e02aca.js.map"
+    "main.5f85ff6b.js.map": "/call_widget/static/js/main.5f85ff6b.js.map"
   },
   "entrypoints": [
     "static/css/main.e98fc924.css",
-    "static/js/main.b0e02aca.js"
+    "static/js/main.5f85ff6b.js"
   ]
 }

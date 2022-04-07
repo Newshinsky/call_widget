@@ -1,6 +1,10 @@
-import { ActionsType, defaultStateType, ListDataType, ListType, SetIsBooleanActionType, SetListActionType } from "../types"
+import { createContext } from 'react'
+import { ActionsType, defaultStateType, ListType, SetIsBooleanActionType, SetListActionType } from '../Types'
 
-const defaultState = {
+
+
+
+export const defaultState = {
     listData: {
         list: [{
             code: null,
@@ -13,6 +17,8 @@ const defaultState = {
     ,
     isLoading: false
 }
+
+
 
 export default function listReducer(state: defaultStateType = defaultState, action: ActionsType) {
     switch (action.type) {

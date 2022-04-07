@@ -2,7 +2,7 @@
 
 
 
-.text {
+.loaderText {
   position: absolute;
   font-family: 'Open Sans';
   font-weight: 600;
@@ -13,7 +13,7 @@
   margin-left: -20px;
 }
 
-.body {
+.loaderBody {
   position: absolute;
   top: 50%;
   margin-left: -50px;
@@ -31,7 +31,7 @@
   }
 }
 
-.base {
+.loaderBase {
   span {
     position: absolute;
     width: 0;
@@ -65,7 +65,7 @@
   }
 }
 
-.face {
+.loaderFace {
   position: absolute;
   height: 12px;
   width: 20px;
@@ -89,10 +89,10 @@
   }
 }
 
-.body>span>span:nth-child(1),
-.body>span>span:nth-child(2),
-.body>span>span:nth-child(3),
-.body>span>span:nth-child(4) {
+.loaderBody>span>span:nth-child(1),
+.loaderBody>span>span:nth-child(2),
+.loaderBody>span>span:nth-child(3),
+.loaderBody>span>span:nth-child(4) {
   width: 30px;
   height: 1px;
   background: #000;
@@ -100,18 +100,18 @@
   animation: fazer1 .2s linear infinite;
 }
 
-.body>span>span:nth-child(2) {
+.loaderBody>span>span:nth-child(2) {
   top: 3px;
   animation: fazer2 .4s linear infinite;
 }
 
-.body>span>span:nth-child(3) {
+.loaderBody>span>span:nth-child(3) {
   top: 1px;
   animation: fazer3 .4s linear infinite;
   animation-delay: -1s;
 }
 
-.body>span>span:nth-child(4) {
+.loaderBody>span>span:nth-child(4) {
   top: 4px;
   animation: fazer4 1s linear infinite;
   animation-delay: -1s;
@@ -207,7 +207,7 @@
   }
 }
 
-.longfazers {
+.loaderLongfazers {
   position: absolute;
   width: 100%;
   height: 100%;

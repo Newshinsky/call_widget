@@ -1,4 +1,4 @@
-.purpose__wrapper {
+.purposeWrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -11,15 +11,19 @@
     padding: 0vw 1vw 1vw;
     margin: 1vw;
     box-sizing: border-box;
+    cursor: pointer;
 
-    a {
+
+
+    p {
         color: #2AA65C;
         font-weight: 700;
         font-size: 12px;
-        text-decoration: none;
+        padding: 0;
+        margin: 0;
     }
 
-    .purpose__title {
+    .purposeTitle {
         >h1 {
             font-weight: 700;
             font-size: 13px;
@@ -35,4 +39,10 @@
     }
 }
 
-@media (max-width: 600px) {}
+.activeItem {
+    outline:2px solid #2AA65C;;
+
+    >p {
+        color: #57667F;
+    }
+}

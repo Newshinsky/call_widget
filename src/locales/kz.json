@@ -2,5 +2,27 @@
     "not-found-page": {
         "title": "Бет табылмады.",
         "description": " Жүйемен дұрыс жұмыс істеу үшін бейне қоңырау виджетінің нысанын пайдаланыңыз немесе оператордан жаңа сілтеме жасауды сұраңыз."
+    },
+    "IntroductoryPage" : {
+        "pageTitle":"Бейне қоңырау шалу",
+        "mainText":"Банк менеджерімен бейне қоңырау",
+        "additionalText":"'Бұдан әрі' батырмасын баса отырып, сіз Банк менеджерімен бейне қоңырау шалуға келісесіз"
+    },
+    "EntryDataPage": {
+        "pageTitle": "Бейне қоңырау шалу",
+        "phoneNumberPlaceholder": "Телефон нөміріңіз",
+        "iinPlaceholder": "ЖСН",
+        "phoneErrorMessage":"Дұрыс нөмірді енгізіңіз",
+        "innErrorMessage":"Қате ЖСН",
+        "purposeOfAppeal":"Өтініштің мақсаты",
+        "selectItem":"Таңдау",
+        "itemSelected":"Таңдалды",
+        "contractOfuseTitle":"«Бұдан әрі» батырмасын басу арқылы Сіз:",
+        "contractOfuseLink":{ 
+          "firstLink": "«Homebank» қызметтерін пайдалану шартының талаптарымен;",
+          "secondLink": "«Homebank Wallet» электрондық әмиянын пайдалану шартының талаптарымен;",
+          "thirdLink": "Halyk Bank ЭЦҚ шығаруға. ЭЦҚ толық тіркеуден өткен жағдайда шығарылады"
+        },
+        "buttonText":"Бұдан әрі"
     }
 }

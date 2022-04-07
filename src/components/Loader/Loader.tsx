@@ -1,28 +1,27 @@
-import React from 'react'
-import "./Loader.scss";
+import './Loader.scss';
 
 const Loader = () => {
     return (
         <>
-            <div className="body">
+            <div className="loaderBody">
                 <span>
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
                 </span>
-                <div className="base">
+                <div className="loaderBase">
                     <span></span>
-                    <div className="face"></div>
+                    <div className="loaderFace"></div>
                 </div>
             </div>
-            <div className="longfazers">
+            <div className="loaderLongfazers">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <h1 className="text">Loading</h1>
+            <h1 className="loaderText">Loading</h1>
         </>
     )
 }

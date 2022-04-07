@@ -1,9 +1,13 @@
-import React from 'react'
-import "./BackArrow.scss"
+import { FC } from 'react'
+import './BackArrow.scss'
 
-const BackArrow = () => {
+type PropsType = {
+    onClick: () => void
+}
+const BackArrow: FC<PropsType> = (props) => {
+    const { onClick } = props
     return (
-        <div className="arrow arrow-left"></div>
+        <div onClick={onClick} className="arrow arrowLeft"></div>
     )
 }
 

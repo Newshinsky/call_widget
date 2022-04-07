@@ -2,5 +2,27 @@
     "not-found-page": {
         "title": "Страница не найдена.",
         "description": "Воспользуйтесь формой виджета видеозвонка для корректной работы с системой или попросите оператора сформировать новую ссылку."
+    },
+    "IntroductoryPage" : {
+        "pageTitle":"Видеозвонок",
+        "mainText":"Видеозвонок с менеджером Банка",
+        "additionalText":"Нажимая кнопку «Далее», Вы соглашаетесь на проведение видеозвонка с менеджером Банка"
+    },
+    "EntryDataPage": {
+        "pageTitle": "Видеозвонок",
+        "phoneNumberPlaceholder": "Номер телефона",
+        "iinPlaceholder": "ИИН",
+        "phoneErrorMessage":"Введите корректный номер ",
+        "innErrorMessage":"Неверный ИИН",
+        "purposeOfAppeal":"Цель обращения",
+        "selectItem":"Выбрать",
+        "itemSelected":"Выбран",
+        "contractOfuseTitle":"Нажимая кнопку «Далее», вы соглашаетесь:",
+        "contractOfuseLink":{
+           "firstLink": "с условиями  Договора использования услуг «Homebank»;",
+           "secondLink": "с условиями Договора использования Электронного кошелька «Homebank Wallet»;",
+           "thirdLink": "на выпуск ЭЦП Halyk Bank. ЭЦП выпускается при условии прохождения полной регистрации"
+        },
+        "buttonText":"Далее"
     }
 }

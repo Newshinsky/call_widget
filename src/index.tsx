@@ -1,15 +1,15 @@
+import App from './App';
+
 import i18n from 'i18next';
-import { createRoot } from 'react-dom/client';
 import { initReactI18next } from 'react-i18next';
-import App from './app';
-import { default as kz, default as ru } from './locales/ru.json';
-import { HashRouter } from 'react-router-dom';
+
+import { createRoot } from 'react-dom/client';
+
+import { default as kz } from './Locales/kz.json';
+import { default as ru } from './Locales/ru.json';
 
 import 'normalize.css';
-import "./index.css"
-import { Provider } from 'react-redux';
-import { store } from './store/rootReducer';
-
+import "./index.css";
 
 i18n
     .use(initReactI18next)
@@ -28,10 +28,6 @@ i18n
 const modalRoot = document.getElementById("root") as HTMLElement;
 const root = createRoot(modalRoot)
 root.render
-    (
-        <Provider store={store}>
-            <HashRouter>
-                <App />
-            </HashRouter>
-        </Provider>
-    )
+    (<App />)
+
+

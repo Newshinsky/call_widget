@@ -1,6 +1,6 @@
-import React, { FC } from 'react'
+import  { FC } from 'react'
 
-import "./Header.scss"
+import './Header.scss'
 
 interface HeaderProps {
     text: string
@@ -9,7 +9,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = (props) => {
     const { text } = props;
     return (
-        <h1 className="header__h1">{text}</h1>
+        <h1 className="pageHeader">{text}</h1>
     )
 }
 

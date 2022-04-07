@@ -1,21 +1,19 @@
-import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import "./CustomButton.scss";
+import { FC } from 'react';
+import './CustomButton.scss';
 
 interface CustomButtonProps {
-    route: string;
     text: string
-    onClickHandler?: () => void
+    onClick: () => void
 }
 
 const CustomButton: FC<CustomButtonProps> = (props) => {
-    const { route, text, onClickHandler } = props;
+    const { text, onClick } = props;
 
     return (
-        <div className="wrapper">
-            <Link onClick={onClickHandler} to={route} >
+        <div className="customButtonWrapper">
+            <a href="##" onClick={onClick}>
                 <p> {text} </p>
-            </Link>
+            </a>
         </div>
     );
 };

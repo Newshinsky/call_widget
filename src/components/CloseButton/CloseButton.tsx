@@ -1,5 +1,4 @@
-import React from 'react'
-import "./CloseButton.scss"
+import './CloseButton.scss'
 
 const CloseButton = () => {
     return (

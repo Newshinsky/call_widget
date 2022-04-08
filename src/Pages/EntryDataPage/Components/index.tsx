@@ -21,6 +21,7 @@ import './index.scss';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import { setLanguage } from '../Reducer/ListReducer';
 
 
 type languageKeyType = {
@@ -42,8 +43,8 @@ const EntryDataPage: FC<PropsType> = (props) => {
 
     const onChangeSelectHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
         i18n.changeLanguage(e.target.value)
-        setObj({ ...obj, language: e.target.value })
-    }, [setObj, obj])
+        dispatch(setLanguage(e.target.value))
+    }, [dispatch])
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -75,7 +76,7 @@ const EntryDataPage: FC<PropsType> = (props) => {
             </div>
             <form className="secondConfirmForm" onSubmit={handleSubmit}>
                 <select
-                    onChange={onChangeSelectHandler} value={obj.language}>
+                    onChange={onChangeSelectHandler} value={state.language}>
                     <option value="ru">Русский</option>
                     <option value="kz">Казакша</option>
                 </select>

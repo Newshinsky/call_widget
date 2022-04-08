@@ -1,7 +1,6 @@
 import { ChangeEvent, useCallback, useState } from 'react';
 
 export type objType = {
-    language: string,
     phone: string,
     isPhoneCorrect: boolean,
     iin: string,
@@ -12,7 +11,6 @@ export type objType = {
 export const UseFormField = () => {
 
     const [obj, setObj] = useState<objType>({
-        language: "ru",
         phone: "",
         isPhoneCorrect: true,
         iin: "",

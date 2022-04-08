@@ -1,6 +1,7 @@
 
 import { createContext, Dispatch, useReducer, useState } from 'react';
 import { hot } from 'react-hot-loader/root';
+
 import EntryDataPage from './Pages/EntryDataPage/Components';
 import listReducer, { defaultState } from './Pages/EntryDataPage/Reducer/ListReducer';
 import { defaultStateType } from './Pages/EntryDataPage/Types';

@@ -19,11 +19,11 @@ const IntroductoryPage: FC<PropsType> = (props) => {
     const { t } = useTranslation("IntroductoryPage");
     return (
         <div className="container">
-            <div className="firstConfirmHeader">
+            <div className="introductoryHeader">
                 <CloseButton />
                 <Header text={t("pageTitle")} />
             </div>
-            <div className="firstConfirmText">
+            <div className="introductoryText">
                 <img src={Videocall} alt="VideocallImage" />
                 <h1> {t("mainText")} </h1>
                 <p>{t("additionalText")}</p>

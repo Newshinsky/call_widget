@@ -1,4 +1,4 @@
-export type ActionsType = SetListActionType | SetIsBooleanActionType
+export type ActionsType = SetListActionType | SetIsBooleanActionType |SetLanguageActionType
 
 export interface SetListActionType {
     type: "SET_LIST",
@@ -8,6 +8,11 @@ export interface SetListActionType {
 export interface SetIsBooleanActionType {
     type: "SET_IS_LOADING",
     payload: boolean
+}
+
+export interface SetLanguageActionType {
+    type: "SET_LANGUAGE",
+    payload: string
 }
 
 export interface ListDataType {
@@ -25,5 +30,6 @@ export interface ListType {
 export interface defaultStateType {
     listData: ListType,
     isLoading: boolean
+    language: string
 }
 

@@ -61,6 +61,7 @@ const EntryDataPage: FC<PropsType> = (props) => {
 
     useEffect(() => {
         dispatch(getListData())
+        console.log(  dispatch(getListData()))
     })
 
     if (obj.formValid) {

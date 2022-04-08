@@ -11,7 +11,6 @@ export const getListData = () => {
     const url = "https://videobank-dev.t2m.kz/broker-hb/call/getReasons"
 
     return async (dispatch: Dispatch<ActionsType>) => {
-        console.log('1')
         dispatch(setIsLoading(true))
         const response = await axios.post(url, {}, {
             auth: {

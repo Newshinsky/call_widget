@@ -1,10 +1,10 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import CloseButton from '../../../Components/CloseButton/CloseButton'
-import CustomButton from '../../../Components/CustomButton/CustomButton'
-import Header from '../../../Components/Header/Header'
-import Videocall from '../../../Static/Imgs/videoCall.png'
+import CloseButton from '../../../components/CloseButton/CloseButton'
+import CustomButton from '../../../components/CustomButton/CustomButton'
+import Header from '../../../components/Header/Header'
+import Videocall from '../../../static/imgs/VideoCall.png'
 
 import './index.scss'
 

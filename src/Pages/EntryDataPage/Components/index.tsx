@@ -6,10 +6,11 @@ import InputMask from 'react-input-mask';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { ContextApp } from '../../../App';
-import BackArrow from '../../../Components/BackArrow/BackArrow';
-import CustomButton from '../../../Components/CustomButton/CustomButton';
-import Header from '../../../Components/Header/Header';
-import Loader from '../../../Components/Loader/Loader';
+import BackArrow from '../../../components/BackArrow/BackArrow';
+import { setLanguage } from '../Reducer/ListReducer';
+import Header from '../../../components/Header/Header';
+import CustomButton from '../../../components/CustomButton/CustomButton';
+import Loader from '../../../components/Loader/Loader';
 import { UseFormField } from '../../../Hooks/UseForm';
 import ValidateIIN from '../../../Utils/ValidateIIN';
 import ValidatePhone from '../../../Utils/ValidatePhone';
@@ -21,7 +22,7 @@ import './index.scss';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-import { setLanguage } from '../Reducer/ListReducer';
+
 
 
 type languageKeyType = {

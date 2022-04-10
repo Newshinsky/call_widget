@@ -6,7 +6,7 @@ import CustomButton from '../../../components/CustomButton/CustomButton'
 import Header from '../../../components/Header/Header'
 import Videocall from '../../../static/imgs/VideoCall.png'
 
-import './index.scss'
+import './IntroductoryPage.scss'
 
 type PropsType = {
     setPage: Dispatch<SetStateAction<string>>

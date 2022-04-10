@@ -1,27 +1,27 @@
 import { ChangeEvent, useCallback, useState } from 'react';
 
-export type objType = {
+export type formFieldDataType = {
     phone: string,
-    isPhoneCorrect: boolean,
     iin: string,
+    isPhoneCorrect: boolean,
     isIinCorrect: boolean
     formValid: boolean
 }
 
 export const UseFormField = () => {
 
-    const [obj, setObj] = useState<objType>({
+    const [formFieldData, setFormFieldData] = useState<formFieldDataType>({
         phone: "",
-        isPhoneCorrect: true,
         iin: "",
+        isPhoneCorrect: true,
         isIinCorrect: true,
         formValid: false,
     });
 
     const handleChange = useCallback((prop: string, e: ChangeEvent<HTMLInputElement>) =>
 
-        setObj({ ...obj, formValid: false, ...{ [prop]: e.target.value } })
-        , [obj]);
+        setFormFieldData({ ...formFieldData, formValid: false, ...{ [prop]: e.target.value } })
+        , [formFieldData]);
 
-    return { obj, handleChange, setObj };
+    return { formFieldData: formFieldData, handleChange, setFormFieldData: setFormFieldData };
 };

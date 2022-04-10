@@ -11,9 +11,9 @@ const CustomButton: FC<CustomButtonProps> = (props) => {
 
     return (
         <div className="customButtonWrapper">
-            <a href="##" onClick={onClick}>
+            <button onClick={onClick}>
                 <p> {text} </p>
-            </a>
+            </button>
         </div>
     );
 };

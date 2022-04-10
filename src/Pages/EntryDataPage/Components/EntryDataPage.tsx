@@ -1,29 +1,26 @@
 import React, { ChangeEvent, Dispatch, FC, SetStateAction, useCallback, useContext, useEffect, useState } from 'react';
-
-import i18n from 'i18next';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { useTranslation } from 'react-i18next';
 import InputMask from 'react-input-mask';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import i18n from 'i18next';
 
-import { ContextApp } from '../../../App';
-import BackArrow from '../../../components/BackArrow/BackArrow';
-import { setLanguage } from '../Reducer/ListReducer';
-import Header from '../../../components/Header/Header';
-import CustomButton from '../../../components/CustomButton/CustomButton';
-import Loader from '../../../components/Loader/Loader';
-import { UseFormField } from '../../../Hooks/UseForm';
-import ValidateIIN from '../../../Utils/ValidateIIN';
 import ValidatePhone from '../../../Utils/ValidatePhone';
+import BackArrow from '../../../components/BackArrow/BackArrow';
+import CustomButton from '../../../components/CustomButton/CustomButton';
+import Header from '../../../components/Header/Header';
+import Loader from '../../../components/Loader/Loader';
+import ValidateIIN from '../../../Utils/ValidateIIN';
+import { UseFormField } from '../../../Hooks/UseForm';
+import { ContextApp } from '../..';
 import { getListData } from '../Actions/GetList';
+import { setIsLoading, setLanguage, setList } from '../Reducer/ListReducer';
 import { ListDataType } from '../Types';
 import PurposeAppeal from './purposeAppeal/PurposeAppeal';
 
-import './index.scss';
-import 'swiper/css';
+import './EntryDataPage.scss';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
-
-
+import 'swiper/css';
 
 type languageKeyType = {
     "ru": string,
@@ -37,7 +34,7 @@ type PropsType = {
 const EntryDataPage: FC<PropsType> = (props) => {
 
     const { state, dispatch } = useContext(ContextApp);
-    const { obj, handleChange, setObj } = UseFormField();
+    const { formFieldData, handleChange, setFormFieldData } = UseFormField();
     const { setPage } = props
     const { t } = useTranslation("EntryDataPage");
     const [selectedItem, setSelectedItem] = useState<null | number>()
@@ -51,27 +48,32 @@ const EntryDataPage: FC<PropsType> = (props) => {
         e.preventDefault();
     };
 
+    const loading = async () => {
+        dispatch(setIsLoading(true))
+        const list = await getListData()
+        dispatch(setList(list.data))
+    }
+
     const onClickFormHandler = useCallback(() => {
-        setObj({
-            ...obj,
-            isIinCorrect: ValidateIIN(obj.iin),
-            isPhoneCorrect: ValidatePhone(obj.phone),
-            formValid: ValidateIIN(obj.iin) && ValidatePhone(obj.phone)
+        setFormFieldData({
+            ...formFieldData,
+            isIinCorrect: ValidateIIN(formFieldData.iin),
+            isPhoneCorrect: ValidatePhone(formFieldData.phone),
+            formValid: ValidateIIN(formFieldData.iin) && ValidatePhone(formFieldData.phone)
         })
-    }, [obj, setObj])
+    }, [formFieldData, setFormFieldData])
 
     useEffect(() => {
-        dispatch(getListData())
-        console.log(  dispatch(getListData()))
-    })
+        loading()
+    }, [])
 
-    if (obj.formValid) {
+    if (formFieldData.formValid) {
         alert("Форма валидна")
     }
 
-    return (!state.isLoading
-        ?
-        <div className="container">
+    return (state.isLoading
+        ? <Loader />
+        : <div className="container">
             <div className="secondConfirmHeader">
                 <BackArrow onClick={() => setPage("IntroductoryPage")} />
                 <Header text={t("pageTitle")} />
@@ -86,19 +88,19 @@ const EntryDataPage: FC<PropsType> = (props) => {
                     placeholder={t("phoneNumberPlaceholder")}
                     mask="+7 (999) 999-99-99"
                     onChange={event => handleChange("phone", event)}
-                    value={obj.phone}
-                    className={!obj.isPhoneCorrect ? "error" : ""}
+                    value={formFieldData.phone}
+                    className={!formFieldData.isPhoneCorrect ? "error" : ""}
                 />
-                {!obj.isPhoneCorrect && <p className="errorMessage"> {t("phoneErrorMessage")}</p>}
+                {!formFieldData.isPhoneCorrect && <p className="errorMessage"> {t("phoneErrorMessage")}</p>}
 
                 <input
                     placeholder={t("iinPlaceholder")}
                     maxLength={12}
                     onChange={event => handleChange("iin", event)}
-                    value={obj.iin}
-                    className={!obj.isIinCorrect ? "error" : ""}
+                    value={formFieldData.iin}
+                    className={!formFieldData.isIinCorrect ? "error" : ""}
                 />
-                {!obj.isIinCorrect && <p className="errorMessage"> {t("innErrorMessage")}</p>}
+                {!formFieldData.isIinCorrect && <p className="errorMessage"> {t("innErrorMessage")}</p>}
 
             </form>
             <div className="secondConfirmAim">
@@ -118,11 +120,11 @@ const EntryDataPage: FC<PropsType> = (props) => {
                             }
                             return <SwiperSlide key={e.code} >
                                 <PurposeAppeal
-                                    selectedText={e.code === selectedItem ? t("selectedItem") : t("itemSelected")}
+                                    selectedText={e.code === selectedItem ? t("itemSelected") : t("selectItem")}
                                     activeItemStyle={e.code === selectedItem ? "activeItem" : ""}
                                     selectItem={() => setSelectedItem(e.code)}
                                     // @ts-ignore
-                                    purpose={e[languageKey[obj.language]]} />
+                                    purpose={e[languageKey[state.language]]} />
                             </SwiperSlide>
                         })}
                     </Swiper>
@@ -150,7 +152,7 @@ const EntryDataPage: FC<PropsType> = (props) => {
                 text="Далее"
             />
         </div >
-        : <Loader />
+
     )
 }
 
